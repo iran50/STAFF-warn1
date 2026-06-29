@@ -994,7 +994,7 @@
             </div>
             <div class="stat-card">
                 <div class="number success" id="resolvedWarne">۰</div>
-                <div class="label">برطرف شده</div>
+                <div class="label">وارن تایید شده</div>
             </div>
             <div class="stat-card">
                 <div class="number" id="adminCount">۰</div>
@@ -1018,7 +1018,7 @@
             <select id="statusFilter" onchange="applyFilters()">
                 <option value="all">همه وضعیت‌ها</option>
                 <option value="open">باز</option>
-                <option value="resolved">برطرف شده</option>
+                <option value="resolved">وارن تایید شده</option>
                 <option value="rejected">رد شده</option>
             </select>
             <span style="color:var(--text-secondary); font-size:0.8rem; margin-right:auto;">
@@ -1058,7 +1058,7 @@
             <div class="form-group">
                 <select id="warneStatus">
                     <option value="open">🟢 باز</option>
-                    <option value="resolved">✅ برطرف شده</option>
+                    <option value="resolved">✅ وارن تایید شده</option>
                     <option value="rejected">❌ رد شده</option>
                 </select>
                 <div style="display:flex; align-items:center; gap:10px; padding:0 0.5rem;">
@@ -1293,7 +1293,7 @@
                 warne.status = 'resolved';
                 renderAll();
                 saveWarneToIPFS();
-                showToast(`✅ وارن ${warne.adminName} برطرف شد`, 'success');
+                showToast(`✅ وارن ${warne.adminName} وارن تایید شد`, 'success');
             }
         }
 
@@ -1471,7 +1471,7 @@
 
                 const statusLabels = {
                     open: '🟢 باز',
-                    resolved: '✅ برطرف شده',
+                    resolved: '✅ وارن تایید شده',
                     rejected: '❌ رد شده'
                 };
 
@@ -1519,7 +1519,7 @@
                             <div class="warne-actions">
                                 ${w.status === 'open' ? `
                                     <button class="btn btn-success btn-xs" onclick="resolveWarne(${w.id})">
-                                        <i class="fas fa-check"></i> برطرف
+                                        <i class="fas fa-check"></i> وارن تایید
                                     </button>
                                     <button class="btn btn-warning btn-xs" onclick="rejectWarne(${w.id})">
                                         <i class="fas fa-times"></i> رد
