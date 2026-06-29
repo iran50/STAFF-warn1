@@ -986,11 +986,11 @@
             </div>
             <div class="stat-card">
                 <div class="number danger" id="criticalWarne">۰</div>
-                <div class="label">بحرانی</div>
+                <div class="label">اخطار3(فایر)</div>
             </div>
             <div class="stat-card">
                 <div class="number warning" id="warningWarne">۰</div>
-                <div class="label">هشدار</div>
+                <div class="label">اخظار2(وارن)</div>
             </div>
             <div class="stat-card">
                 <div class="number success" id="resolvedWarne">۰</div>
@@ -1011,9 +1011,9 @@
             <input type="text" id="searchInput" placeholder="🔍 جستجوی ادمین..." oninput="applyFilters()" />
             <select id="priorityFilter" onchange="applyFilters()">
                 <option value="all">همه اولویت‌ها</option>
-                <option value="critical">بحرانی</option>
-                <option value="warning">هشدار</option>
-                <option value="info">اطلاع‌رسانی</option>
+                <option value="critical">اخطار3(فایر)</option>
+                <option value="warning">اخظار2(وارن)</option>
+                <option value="info">ااخطار1</option>
             </select>
             <select id="statusFilter" onchange="applyFilters()">
                 <option value="all">همه وضعیت‌ها</option>
@@ -1044,9 +1044,9 @@
             <div class="form-group">
                 <input type="text" id="warneServer" placeholder="🖥 سرور (مثال: VMP #1)" />
                 <select id="warnePriority">
-                    <option value="info">ℹ️ اطلاع‌رسانی</option>
-                    <option value="warning" selected>⚠️ هشدار</option>
-                    <option value="critical">🔥 بحرانی</option>
+                    <option value="info">ℹ️ ااخطار1</option>
+                    <option value="warning" selected>⚠️ اخظار2(وارن)</option>
+                    <option value="critical">🔥 اخطار3(فایر)</option>
                 </select>
             </div>
             <div class="form-group full">
@@ -1233,10 +1233,10 @@
 
                 if (existing.duplicateCount >= 3 && existing.priority !== 'critical') {
                     existing.priority = 'critical';
-                    showToast(`⚠️ وارن ${adminName} به بحرانی ارتقا یافت`, 'warning');
+                    showToast(`⚠️ وارن ${adminName} به اخطار3(فایر) ارتقا یافت`, 'warning');
                 } else if (existing.duplicateCount >= 2 && existing.priority === 'info') {
                     existing.priority = 'warning';
-                    showToast(`⚠️ وارن ${adminName} به هشدار ارتقا یافت`, 'warning');
+                    showToast(`⚠️ وارن ${adminName} به اخظار2(وارن) ارتقا یافت`, 'warning');
                 }
 
                 renderAll();
@@ -1464,9 +1464,9 @@
 
             grid.innerHTML = data.map(w => {
                 const priorityLabels = {
-                    critical: '🔥 بحرانی',
-                    warning: '⚠️ هشدار',
-                    info: 'ℹ️ اطلاع‌رسانی'
+                    critical: '🔥 اخطار3(فایر)',
+                    warning: '⚠️ اخظار2(وارن)',
+                    info: 'ℹ️ ااخطار1'
                 };
 
                 const statusLabels = {
